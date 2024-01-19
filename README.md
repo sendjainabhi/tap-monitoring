@@ -1,6 +1,6 @@
 # Tanzu Application Platform non-saas monitoring with Prometheus and Grafana
 
-This is a non saas monitoring solution using prometheus and grafana for TAP using the custom resource support in kube state metrics anf grafana dashboards.
+This is a non saas monitoring solution using prometheus and grafana for TAP using the custom resource support in kube state metrics and grafana dashboards.
 
 Deployment Steps : 
 
@@ -152,3 +152,7 @@ You can follow below steps to create some TAP K8 clusters dashboards
     ![TAP K8 namespace level Dashboard  ](./dashboards/k8-ns-matrix-dashoard.jpg)
 
     Refer to [grafana dashboards](https://grafana.com/grafana/dashboards/) for various kind of dashboards samples. 
+
+## Integrate Grafana Dashboard in Tanzu Developer Portal / TAP-Gui 
+Please follow [steps](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.7/tap/tap-gui-plugins-valid-plugins-grafana.html) to integrate grafana plugin in Tanzu Developer Portal(TDP). 
+
