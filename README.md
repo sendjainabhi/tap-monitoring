@@ -2,10 +2,18 @@
 
 This is a non saas monitoring solution using prometheus and grafana for TAP using the custom resource support in kube state metrics and grafana dashboards.
 
-Deployment Steps : 
+# Deployment Steps : 
 
 
-## Prometheus Installation
+
+1. [Prometheus Installation](#prom-installation)
+1. [Grafana Installation](#grafana-installation)
+1. [TAP PromQL query Samples](#PromQL-samples)
+1. [Grafana Dashboards ](#grafana-dashboards)
+1. [Integrate Grafana Dashboard in Tanzu Developer Portal](#grafana-dashboards-tdp)
+
+
+### <a id="prom-installation"> Prometheus Installation
 
 
 * Install helm package manager in your local machine terminal. 
@@ -30,7 +38,7 @@ helm upgrade --install tap-observability  prometheus-community/kube-prometheus-s
 
 ```
 
-## Grafana Installation
+### <a id="grafana-installation">  Grafana Installation
 
 * Prepare grafana values file based on [this](grafana-value.yaml) file and name it grafana-values.yaml
   - You may need to update the prometheus server url as per your url.
@@ -60,7 +68,7 @@ kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-passwor
 
 ```
 
-## TAP PromQL query Samples 
+#### <a id="PromQL-samples"> TAP PromQL query Samples 
 
 The resource types and corresponding prometheus metrics being monitored are:
 
@@ -85,7 +93,7 @@ The resource types and corresponding prometheus metrics being monitored are:
 - **kpack images** - kpack_image_info, kpack_image_status
 - **kpack builds** - kpack_build_info, kpack_build_involved_buildpacks, kpack_build_status
 
-### TAP PromQL Query Samples 
+#### TAP PromQL Query Samples 
 
 ```
 #TAP PACKAGE INSTALLS IN GOOD STATE
@@ -133,7 +141,7 @@ count by (service_kind) (service_binding_info)
 ```
 
 
-## Grafana Dashboards 
+### <a id="grafana-dashboards"> Grafana Dashboards 
 
 You can follow below steps to create some TAP K8 clusters dashboards 
 
@@ -153,6 +161,6 @@ You can follow below steps to create some TAP K8 clusters dashboards
 
     Refer to [grafana dashboards](https://grafana.com/grafana/dashboards/) for various kind of dashboards samples. 
 
-## Integrate Grafana Dashboard in Tanzu Developer Portal / TAP-Gui 
+### <a id="grafana-dashboards-tdp"> Integrate Grafana Dashboard in Tanzu Developer Portal / TAP-Gui 
 Please follow [steps](https://docs.vmware.com/en/VMware-Tanzu-Application-Platform/1.7/tap/tap-gui-plugins-valid-plugins-grafana.html) to integrate grafana plugin in Tanzu Developer Portal(TDP). 
 
